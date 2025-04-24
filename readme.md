@@ -28,14 +28,18 @@ This project is a full-stack application development project to manage vaccinati
     npm install
     npm start
     ```
-4. Install database:
+3. Database setup:
     download complete package from https://www.postgresql.org/download/ version "PostgreSQL 17.0"
     install and use database folder for quries to create database, user and tables
 
-3. Repositoy has 3 folders structure:
+4. Repositoy has 3 folders structure:
     school-vaccine-portal\school-vaccine-portal-backend
     school-vaccine-portal\school-vaccine-portal-frontend
     database
+
+5. Application login:
+    email = 'jatin@bits.com'
+    password = 'jatin'
 
 ## License
 Jatin Saini
