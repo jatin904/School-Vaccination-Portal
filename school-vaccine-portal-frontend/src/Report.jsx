@@ -222,10 +222,10 @@ const Report = () => {
               </CSVLink>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="success" onClick={exportToExcel}>Download Excel</Button>
+              <Button variant="contained" color="primary" onClick={exportToExcel}>Download Excel</Button>
             </Grid>
             <Grid item>
-              <Button variant="contained" color="error" onClick={exportToPDF}>Download PDF</Button>
+              <Button variant="contained" color="primary" onClick={exportToPDF}>Download PDF</Button>
             </Grid>
           </Grid>
 

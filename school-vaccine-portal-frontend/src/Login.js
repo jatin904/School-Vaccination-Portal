@@ -15,6 +15,37 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 
+// Footer Component
+
+const Footer = () => (
+  <Box
+    component="footer"
+    sx={{
+      position: "fixed",
+      left: 0,
+      bottom: 0,
+      width: "100%",
+      backgroundColor: (theme) =>
+        theme.palette.mode === "light"
+          ? theme.palette.grey[200]
+          : theme.palette.grey[800],
+      p: 3,
+      zIndex: 1300,
+    }}
+  >
+    <Container maxWidth="sm">
+      <Typography variant="body2" color="text.secondary" align="center">
+        {"Jatin Saini "}
+        <Link color="inherit" href="https://github.com/jatin904/School-Vaccination-Portal">
+          School Vaccination Portal
+        </Link>{" "}
+        {new Date().getFullYear()}
+        {"."}
+      </Typography>
+    </Container>
+  </Box>
+);
+
 
 function Login() {
   const navigate = useNavigate(); // Initialize navigate
@@ -218,6 +249,7 @@ function Login() {
 
         </Paper>
       </Container>
+      <Footer />
     </Box>
   );
 }

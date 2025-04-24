@@ -11,6 +11,7 @@ This project is a full-stack application development project to manage vaccinati
 - Manage students
 - Track vaccination drives
 - Schedule vaccination appointments
+- Generate report and export it in excel, csv & pdf format
 
 ## Installation
 
@@ -20,11 +21,22 @@ This project is a full-stack application development project to manage vaccinati
     ```
 2. Install dependencies for both frontend and backend:
     ```bash
-    cd backend
+    cd school-vaccine-portal\school-vaccine-portal-backend
     npm install
-    cd ../frontend
+    npm start
+    cd ../school-vaccine-portal\school-vaccine-portal-frontend
     npm install
+    npm start
     ```
+4. Install database:
+    download complete package from https://www.postgresql.org/download/ version "PostgreSQL 17.0"
+    install and use database folder for quries to create database, user and tables
+
+3. Repositoy has 3 folders structure:
+    school-vaccine-portal\school-vaccine-portal-backend
+    school-vaccine-portal\school-vaccine-portal-frontend
+    database
 
 ## License
-Jatin Saini 
+Jatin Saini
+2024tm93002 
