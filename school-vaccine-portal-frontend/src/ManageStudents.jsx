@@ -94,14 +94,19 @@ const ManageStudents = () => {
     const name = student.name?.toLowerCase() || '';
     const classname = student.classname?.toLowerCase() || '';
     const id = String(student.id || '').toLowerCase();
-    const vaccinationNames = student.vaccinations
-      ?.map(v => v.vaccineName?.toLowerCase())
-      .join(' ') || '';
+    const vaccinationDetails = student.vaccinations
+    ?.map(v => {
+      const title = v.title?.toLowerCase() || '';
+      const vaccineName = v.vaccineName?.toLowerCase() || '';
+      const date = new Date(v.date).toLocaleDateString().toLowerCase();
+      return `${title} ${vaccineName} ${date}`;
+    })
+    .join(' ') || '';
     return (
       name.includes(searchQuery) ||
       classname.includes(searchQuery) ||
       id.includes(searchQuery) ||
-      vaccinationNames.includes(searchQuery)
+      vaccinationDetails.includes(searchQuery)
     );
   });
 
@@ -289,7 +294,8 @@ const handleBulkUpload = async (acceptedFiles) => {
               </TableCell>
               <TableCell>Student ID</TableCell>
               <TableCell>Class</TableCell>
-              <TableCell>Vaccine Name</TableCell>
+              <TableCell>Vaccination Details</TableCell>
+              {/*<TableCell>Vaccination Drive</TableCell>  new added for testing*/}
               <TableCell>Vaccination Status</TableCell>
               <TableCell>Actions</TableCell>
             </TableRow>
@@ -304,13 +310,27 @@ const handleBulkUpload = async (acceptedFiles) => {
                   {student.vaccinations.map((v) => (
                     <Chip
                       key={v.id}
-                      label={`${v.vaccineName} (${new Date(v.date).toLocaleDateString()})`}
+                      label={`${v.title || ''}  (${new Date(v.date).toLocaleDateString()}) ${v.vaccineName}`}
                       color="success"
                       size="small"
                       sx={{ m: 0.5 }}
                     />
                   ))}
                 </TableCell>
+
+{/*                 <TableCell>
+        {student.vaccinations.map((v) => (
+          <Chip
+            key={v.id}
+            label={v.title || ''} // <- assuming `vaccinationDriveName` field
+            color="primary"
+            size="small"
+            sx={{ m: 0.5 }}
+          />
+        ))}
+      </TableCell> */}
+
+
                 <TableCell>{student.vaccination_status || 'Not Vaccinated'}</TableCell>
                 <TableCell>
                   <IconButton onClick={() => {
