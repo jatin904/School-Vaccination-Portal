@@ -244,7 +244,7 @@ axios
   <Button variant="contained" color="primary" onClick={handleSubmit}>
     {editIndex !== null ? 'Update Drive' : 'Create Drive'}
   </Button>
-  <Button variant="contained" color="primary" onClick={() => window.location.reload()}>
+  <Button variant="outlined" color="error" onClick={() => window.location.reload()}>
     Cancel
   </Button>
 </Box>

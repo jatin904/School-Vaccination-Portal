@@ -402,7 +402,7 @@ const handleBulkUpload = async (acceptedFiles) => {
           </form>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose} variant="outlined" color="error"  >Cancel</Button>
           <Button onClick={handleSubmit} variant="contained">
             {selectedStudent ? 'Update' : 'Create'}
           </Button>
@@ -518,8 +518,8 @@ const VaccinationDialog = ({ student, onVaccinate }) => {
           </FormControl>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit} variant="contained" color="success">
+          <Button onClick={handleClose} variant="outlined" color="error" >Cancel</Button>
+          <Button onClick={handleSubmit} variant="contained" color="primary">
             Record Vaccination
           </Button>
         </DialogActions>
